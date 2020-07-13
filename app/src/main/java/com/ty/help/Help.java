@@ -50,8 +50,10 @@ public class Help {
             }).start();
         }
 
+        // game need first launcher
         public  boolean checkFile()
         {
+
 
             File file = new File(rootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/MyApp.lua");
             return  file.exists();
