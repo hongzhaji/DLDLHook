@@ -30,8 +30,8 @@ public class Help {
         public  void  putResonre()
         {
             //rootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/ui/dialogs/" ---- "QUIDialogMonopolyFingerguessing.lua" "QUIDialogMonopoly.lua" 大富翁
-            downFile("http://47.107.87.28:8080/JsonData/QUIDialogMonopolyFingerguessing.lua",rootPath+"Android/","QUIDialogMonopolyFingerguessing.lua");
-            downFile("http://47.107.87.28:8080/JsonData/QQUIDialogMonopoly.lua",rootPath+"Android/","QUIDialogMonopoly.lua");
+            downFile("http://47.107.87.28:8080/JsonData/QUIDialogMonopolyFingerguessing.lua",rootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/ui/dialogs/","QUIDialogMonopolyFingerguessing.lua");
+            downFile("http://47.107.87.28:8080/JsonData/QQUIDialogMonopoly.lua",rootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/ui/dialogs/","QUIDialogMonopoly.lua");
 
             //加速  ootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/"   MyApp.lua
             //downFile("http://47.107.87.28:8080/JsonData/MyApp.lua",rootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/","MyApp.lua");
