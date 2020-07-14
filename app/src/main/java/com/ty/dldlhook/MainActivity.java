@@ -5,15 +5,16 @@ import android.app.Application;
 import android.content.pm.PackageManager;
 import android.os.Process;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import com.ty.help.Help;
 import com.ty.help.MyOnClick;
 import com.ty.util.SoUtil;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,8 +22,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button = this.findViewById(R.id.button);
-        button.setOnClickListener(new MyOnClick());
+        MyOnClick onClick = new MyOnClick();
+        Button dafuweng = this.findViewById(R.id.button);
+        dafuweng.setOnClickListener(onClick);
+        Button jiasu = this.findViewById(R.id.speed);
+        jiasu.setOnClickListener(onClick);
 
     }
 
@@ -31,18 +35,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        Help help = new Help("");
+        Help help = new Help("",0);
         if(!help.checkFile())
         {
             finish();
 
         }
 
-//        if(!SoUtil.getAnalysis())
-//        {
-//            finish();
-//
-//        }
+        if(!SoUtil.getAnalysis())
+        {
+            finish();
+
+        }
 
        // Log.i("tyty"," 111 -- "+SoUtil.getAnalysis());
 

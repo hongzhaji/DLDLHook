@@ -4,6 +4,7 @@ import android.os.Debug;
 import android.os.Environment;
 import android.util.Log;
 
+import com.ty.dldlhook.R;
 import com.ty.util.DownloadUtil;
 
 import java.io.File;
@@ -17,9 +18,11 @@ public class Help {
 
     private  String name;
     private String rootPath ;
-    public Help(String name)
+    private  int id;
+    public Help(String name,int id)
     {
         this.name = name;
+        this.id = id;
         rootPath = Environment.getExternalStorageDirectory().getPath()+"/";
     }
         public  void  getResoure()
@@ -30,11 +33,17 @@ public class Help {
         public  void  putResonre()
         {
             //rootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/ui/dialogs/" ---- "QUIDialogMonopolyFingerguessing.lua" "QUIDialogMonopoly.lua" 大富翁
-            downFile("http://47.107.87.28:8080/JsonData/QUIDialogMonopolyFingerguessing.lua",rootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/ui/dialogs/","QUIDialogMonopolyFingerguessing.lua");
-            downFile("http://47.107.87.28:8080/JsonData/QQUIDialogMonopoly.lua",rootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/ui/dialogs/","QUIDialogMonopoly.lua");
+            if(id == R.id.button)
+            {
+                downFile("http://47.107.87.28:8080/JsonData/QUIDialogMonopolyFingerguessing.lua",rootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/ui/dialogs/","QUIDialogMonopolyFingerguessing.lua");
+                downFile("http://47.107.87.28:8080/JsonData/QQUIDialogMonopoly.lua",rootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/ui/dialogs/","QUIDialogMonopoly.lua");
+            }else  if(id == R.id.speed)
+            {
+                //加速  ootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/"   MyApp.lua
+                downFile("http://47.107.87.28:8080/JsonData/MyApp.lua",rootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/","MyApp.lua");
+            }
 
-            //加速  ootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/"   MyApp.lua
-            //downFile("http://47.107.87.28:8080/JsonData/MyApp.lua",rootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/","MyApp.lua");
+
         }
 
         public void  helphelp()
