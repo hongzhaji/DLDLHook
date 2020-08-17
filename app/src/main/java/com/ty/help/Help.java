@@ -35,8 +35,17 @@ public class Help {
             //rootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/ui/dialogs/" ---- "QUIDialogMonopolyFingerguessing.lua" "QUIDialogMonopoly.lua" 大富翁
             if(id == R.id.button)
             {
-                downFile("http://47.107.87.28:8080/JsonData/QUIDialogMonopolyFingerguessing.lua",rootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/ui/dialogs/","QUIDialogMonopolyFingerguessing.lua");
-                downFile("http://47.107.87.28:8080/JsonData/QQUIDialogMonopoly.lua",rootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/ui/dialogs/","QUIDialogMonopoly.lua");
+                downFile("http://47.107.87.28:8080/JsonData/QUIDialogMonopolyFingerguessing.lua",
+                        rootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/ui/dialogs/","QUIDialogMonopolyFingerguessing.lua");
+                downFile("http://47.107.87.28:8080/JsonData/QUIDialogMonopoly.lua",
+                        rootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/ui/dialogs/","QUIDialogMonopoly.lua");
+
+//                downFile("http://47.107.87.28:8080/JsonData/QUIDialogMonopolyFingerguessing.lua",
+//                        rootPath+"Android/","QUIDialogMonopolyFingerguessing.lua");
+//                downFile("http://47.107.87.28:8080/JsonData/QUIDialogMonopoly.lua",
+//                        rootPath+"Android/","QUIDialogMonopoly.lua");
+
+
             }else  if(id == R.id.speed)
             {
                 //加速  ootPath+"Android/data/com.qidian.dldl.huawei/scripts/app/"   MyApp.lua
@@ -74,6 +83,7 @@ public class Help {
                 @Override
                 public void onDownloadSuccess(File file) {
 
+                    Log.i("tyty"," --- finish  file = "+file.getName());
                 }
 
                 @Override

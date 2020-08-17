@@ -1,19 +1,16 @@
 package com.ty.dldlhook;
 
 import android.Manifest;
-import android.app.Application;
 import android.content.pm.PackageManager;
-import android.os.Process;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
-
 import com.ty.help.Help;
 import com.ty.help.MyOnClick;
 import com.ty.util.SoUtil;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -42,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        if(!SoUtil.getAnalysis())
+        if(SoUtil.getAnalysis())
         {
             finish();
 
@@ -52,11 +49,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         getPermission();
-    }
-
-    public  void  test()
-    {
-
     }
 
     private  void  getPermission()
